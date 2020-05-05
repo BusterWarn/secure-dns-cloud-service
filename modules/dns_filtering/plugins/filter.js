@@ -5,12 +5,9 @@
  * @param {String} domain the url to filter
  * @return {Promise} 
  */
-async function cacheLookup(domain) {
+async function filterDomain(domain) {
 
-    if (domain == google.com)
-      return "216.58.211.142";
-    else
-      return -1;
+    return {answer: null};
 };
 
 async function routes (fastify, options) {

@@ -1,28 +1,53 @@
 'use strict'
 
-const path = require('path')
-const AutoLoad = require('fastify-autoload')
+const options = {
+  main_plugin_route: './plugins/filter',
+  address: '0.0.0.0',
+  port: 3052,
+};
 
-module.exports = function (fastify, opts, next) {
-  // Place here your custom code!
+const externalPorts = {
+  query: 3050,
+  cache: 3051,
+  filter: 3052,
+}
 
-  // Do not touch the following lines
+const fastify = require('fastify')({
+  logger: true
+});
 
-  // This loads all plugins defined in plugins
-  // those should be support plugins that are reused
-  // through your application
-  fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'plugins'),
-    options: Object.assign({}, opts)
-  })
+fastify.register(require(options.main_plugin_route));
 
-  // This loads all plugins defined in services
-  // define your routes in one of these
-  fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'services'),
-    options: Object.assign({}, opts)
-  })
+fastify.listen(options.port, options.address, function (err, address) {
+  if (err) {
+    fastify.log.error(err)
+    process.exit(1)
+  }
+  fastify.log.info(`server listening on ${address}`)
+});
 
-  // Make sure to call next when done
-  next()
+/**
+ * Handles user input.
+ * @param {String[]} argv Array with user arguments.
+ * @param {object} options The options that the program will run with.
+ * @return {bool} false if invalid input, true if valid.
+ */
+function handleInputArguments(argv, options) {
+  let option = '';
+
+  for (let i = 2; i < argv.length; i++) {
+
+    if (argv[i].startsWith('-port=')) {
+      option = argv[i].substring('-port='.length);
+      if (!option || isNaN(option))
+        fastify.log.info('argument port must be a valid port');
+      else
+        options.server = option;
+    } else if (argv[i].startsWith('-host=local')) {
+      options.address = '192.168.1.80';
+    } else if (argv[i].startsWith('-host=ipv4')) {
+      options.address = '0.0.0.0';
+    }
+  }
+  return true;
 }
