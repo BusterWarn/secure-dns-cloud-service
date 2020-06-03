@@ -63,8 +63,8 @@ Needs to implement POST method with the following attribute
 
 Needs to implement DELETE method with the following attribute 
 {
-    "password": "$input.params('password')",
-    "http_method": "$context.httpMethod"
+    password:
+    http_method:
 }
 
 needs premmision to be invoked by other lamda functions.
