@@ -1,0 +1,29 @@
+{
+  "name": "secure-dns-cloud-service",
+  "version": "1.0.0",
+  "description": "Microprocces designed API to make UDP querries that blocks websites suspisious of being malicious.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prehello": "echo \"-----\r\n\"",
+    "hello": "echo \"Hello world\"",
+    "start": "node app.js",
+    "stop": "pm2 delete secure_dns_filter secure_dns_query secure_dns_cache secure_dns_controller",
+    "restart": "npm run stop && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BusterWarn/secure-dns-cloud-service.git"
+  },
+  "author": "Buster Wärn, Tony Berglund",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BusterWarn/secure-dns-cloud-service/issues"
+  },
+  "homepage": "https://github.com/BusterWarn/secure-dns-cloud-service#readme",
+  "dependencies": {
+    "get-port": "^5.1.1",
+    "npm": "^6.14.5",
+    "pm2": "^4.4.0"
+  }
+}

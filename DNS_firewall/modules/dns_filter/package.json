@@ -1,0 +1,29 @@
+{
+  "name": "dns_filter",
+  "version": "1.0.0",
+  "description": "Microservice filtering DNS queries. Child and part of Secure DNS Cloud Service microservice.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap test/**/*.test.js",
+    "start": "fastify start -l info app.js",
+    "dev": "fastify start -w -l info -P app.js"
+  },
+  "keywords": [],
+  "author": "Buster Wärn, Tony Berglund",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^2.14.1",
+    "fastify-autoload": "^1.0.0",
+    "fastify-cli": "^1.5.0",
+    "fastify-plugin": "^1.5.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "node-libcurl": "^2.1.1"
+  },
+  "devDependencies": {
+    "tap": "^12.5.3"
+  }
+}

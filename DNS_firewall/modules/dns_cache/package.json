@@ -1,0 +1,23 @@
+{
+  "name": "dns_cache",
+  "version": "1.0.0",
+  "description": "Microservice controller for secure DNS service.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap test/**/*.test.js",
+    "start": "fastify start -l info app.js",
+    "dev": "fastify start -w -l info -P app.js"
+  },
+  "keywords": [],
+  "author": "Buster Wärn, Tony Berglund",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^2.0.0"
+  },
+  "devDependencies": {
+    "tap": "^12.5.3"
+  }
+}
