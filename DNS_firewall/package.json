@@ -23,7 +23,7 @@
   "homepage": "https://github.com/BusterWarn/secure-dns-cloud-service#readme",
   "dependencies": {
     "get-port": "^5.1.1",
-    "npm": "^6.14.5",
+    "npm": "^6.14.6",
     "pm2": "^4.4.0"
   },
   "devDependencies": {
