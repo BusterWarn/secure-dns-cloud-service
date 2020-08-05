@@ -15,7 +15,7 @@
   "author": "Buster Wärn, Tony Berglund",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^2.14.0",
+    "fastify": "^2.15.1",
     "fastify-autoload": "^1.0.0",
     "fastify-cli": "^1.5.0",
     "fastify-plugin": "^1.5.0",
