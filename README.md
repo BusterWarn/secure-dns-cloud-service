@@ -2,9 +2,9 @@
 
 This is the repository for the code used in the bachelor thesises of Buster Hultgren Wärn and Tony Berglund. This is a collaboration between these students and Clavister.
 
-Tonys work includes reasearching and testing DNS queries for Do53, DoT and DoH. His bachelor thesis paper can be found [here](https://www.umu.se/)
+Tonys work includes reasearching and testing DNS queries for Do53, DoT and DoH. His bachelor thesis paper can be found [here](https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1475491&dswid=-9479)
 
-Busters work includes testing whether or not a DNS firewall is most suitable for a hired virtual server or for AWS lambda functions. His bachelor thesis paper can be found [here](https://www.umu.se/)
+Busters work includes testing whether or not a DNS firewall is most suitable for a hired virtual server or for AWS lambda functions. His bachelor thesis paper can be found [here](https://www.diva-portal.org/smash/record.jsf?pid=diva2%3A1475580&dswid=-8985)
 
 Together we built a prototype of a DNS firewall both for AWS lambda functions and a virtual server running with Node.js. These implementations can be found in subdirectories DNS_firewall and DNS_firwall_aws respecitvely.
 
